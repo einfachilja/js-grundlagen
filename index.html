@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Grundlagen</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scopes.js"></script>
+</head>
+
+
+<body onload="scopeTest()">
+
+    <h1 id="website_title">Der Titel der Website</h1>
+
+    <div id="test_div"></div>
+
+    <input id="test_input" type="number" value="5">
+
+    <button onclick="classToggle()">Klick mich</button>
+
+    <p id="test_p">Gehe bitte mit der Maus über mich!</p>
+
+    <input type="text" onkeyup="console.log('keyup')">
+    <input type="text" onkeydown="console.log('keydown')">
+    <input type="text" onfocus="console.log('fokussiert!')">
+    <input type="checkbox" onchange="console.log('Checkbox verändert!')">
+
+    <!-- Übungen -->
+
+    <input type="text" onmousedown="console.log('Mit Maus geklickt')" onmouseleave="console.log('Mit Maus verlassen')"
+        onmouseover="console.log('Mit Maus über Element gegangen')">
+
+    <!-- Aufgabe 09 onkeydown wird durchgehend ausgeführt. onkeyup nur eimalig -->
+
+    <input id="input_test" onkeydown="inputTest('input_test')" onkeyup="inputTest('input_test')" type="number"
+        value="6">
+
+    <button id="toggleButton">Toggle Button</button>
+
+</body>
+
+<script src="dom_manupulation.js"></script>
+
+</html>

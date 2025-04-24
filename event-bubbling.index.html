@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+</head>
+
+<style>
+    body {
+        background-color: #021821;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .outer {
+        background-color: #105063;
+        height: 400px;
+        width: 400px;
+        border: 2px solid #FE6659;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inner {
+        background-color: #FE6659;
+        height: 200px;
+        width: 200px;
+        border: 2px solid #021821;
+    }
+</style>
+
+
+
+<script>
+    function logUp() { console.log('logUp'); }
+    function logDown() { console.log('logDown'); }
+    function logBody() { console.log('logBody'); }
+
+    function stopEventBubbling(event) {
+        event.stopPropagation();
+    }
+
+</script>
+
+<body onclick="logBody()">
+
+    <div onclick="logUp()" class="outer">
+        <div onclick="logDown(), stopEventBubbling(event)" class="inner">
+
+        </div>
+    </div>
+
+    <div onclick="logUp()" class="outer">
+        <div onclick="logDown()" class="inner">
+
+        </div>
+    </div>
+
+</body>
+
+</html>

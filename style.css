@@ -1,0 +1,21 @@
+/* .green_bg {
+    background-color: green;
+}
+
+.text_color {
+    color: red;
+} */
+
+.d_none {
+  display: none;
+}
+
+.red_box {
+  height: 50px;
+  width: 50px;
+  border: 4px solid red;
+}
+
+.green_fill {
+  background-color: rgb(110, 180, 5);
+}

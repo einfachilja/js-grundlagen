@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resp Menu Concept</title>
+
+    <style>
+        body {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .content {
+            min-height: 100vh;
+            background-color: rgb(32, 31, 35);
+            position: relative;
+            /*wichtig, die sich von der größe Ändern kann */
+            overflow-x: hidden;
+            /* entfernt den scroll-balken */
+        }
+
+        header {
+            background-color: rgb(74, 72, 82);
+            height: 64px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 32px;
+        }
+
+        .resp_menu_box {
+            background-color: rgb(123, 123, 133);
+            display: flex;
+            flex-direction: column;
+            width: 180px;
+            height: 350px;
+            position: absolute;
+            top: 64px;
+            right: 0;
+            transition: all 250ms ease-in-out;
+        }
+
+        .resp_menu_closed {
+            transform: translateX(100%);
+            /* bewegst das resp_menu 100% nach rechts auf x-Achse */
+        }
+    </style>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('resp_menu').classList.toggle('resp_menu_closed');
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="content">
+
+        <header>
+            logo
+
+            <button onclick="toggleMenu()">open menu</button>
+        </header>
+
+        <div id="resp_menu" class="resp_menu_box resp_menu_closed">
+            <a href="">link 1</a>
+            <a href="">link 2</a>
+            <a href="">link 1</a>
+            <a href="">link 4</a>
+        </div>
+
+
+        <main>
+            weiterer content
+        </main>
+
+    </div>
+
+</body>
+
+</html>
