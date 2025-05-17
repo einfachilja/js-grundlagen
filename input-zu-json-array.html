@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>08 - Input zu JSON Array + Form Validation</title>
 
-<style>
-    .eingabe {
-        display: flex;
-        flex-direction: column;
-        width: 400px;
-    }
-</style>
+    <style>
+        .eingabe {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+        }
+    </style>
 
-<script>
-let recipies = [];
+    <script>
+        let recipies = [];
 
-function addToRecipies(params) {
-    let title = document.getElementById('title');
-    let description = document.getElementById('description');
+        function addToRecipies(params) {
+            let title = document.getElementById('title');
+            let email = document.getElementById('email');
+            let description = document.getElementById('description');
 
-    let recipy = {
-        "title": title.value,
-        "description": description.value
-    }
+            let recipy = {
+                "title": title.value,
+                "email": email.value,
+                "description": description.value
+            }
 
-    recipies.push(recipy);
+            recipies.push(recipy);
 
-    title.value = "";
-    description.value = "";
+            title.value = "";
+            email.value = "";
+            description.value = "";
 
-    console.log(recipies);
-    
-}
-</script>
+            console.log(recipies);
+
+        }
+    </script>
 
 </head>
 
@@ -41,13 +45,15 @@ function addToRecipies(params) {
 
     <h1>08 - Input zu JSON Array + Form Validation</h1>
 
-    <div class="eingabe">
     <h2>Das Kochbuch</h2>
 
-    <input id="title" type="text" placeholder="Titel eingeben...">
-    <textarea name="" id="description" placeholder="Zutaten eingeben..."></textarea>
-    <button onclick="addToRecipies()">speichern</button>
-    </div>
-    
+    <form class="eingabe" onsubmit="addToRecipies(); return false">
+        <input id="title" type="text" placeholder="Titel eingeben..." required minlength="5">
+        <input id="email" type="email" placeholder="E-Mail eingeben..." required>
+        <textarea name="" id="description" placeholder="Zutaten eingeben..." required></textarea>
+        <button>speichern</button>
+    </form>
+
 </body>
+
 </html>
