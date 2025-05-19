@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+
+</head>
+<body>
+
+    <h1>Bitte einloggen</h1>
+
+    <!-- id`s können doppelt verwendet werden, da es unterschiedliche seiten sind -->
+     <form onsubmit="login(); return false"> <!-- zusätzlich preserve log in console anhaben, damit sich nicht neu lädt -->
+        <input type="email" id="email" required>
+        <input type="password" id="password" required>
+        <input type="submit" value="einloggen">
+    </form>
+
+    <div id="msgBox"></div>
+    
+    <script src="login.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
